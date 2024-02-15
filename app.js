@@ -3,6 +3,7 @@ const bodyParser = require("body-parser");
 const app = express();
 
 var userInputs = [];
+var checkedInputs = []; 
 
 app.use(bodyParser.urlencoded({extended: true}));
 app.use(express.static("public"));
@@ -24,6 +25,7 @@ app.get("/", (req,res) => {
   res.render("list", {kindOfDay: date, newListItem: userInputs});
 
 })
+// time to add a simple array to even store checked tasks , so that when a new task is added , the previously checked tasks are checked and do not fade when reloaded
 
 app.post("/", (req,res) => { 
    let userInput = req.body.newItem ; 
