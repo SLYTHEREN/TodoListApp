@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>To-do-list</title>
   <link rel="stylesheet" href="css/styles.css">
+  
 </head>
 <body>
   <div class="box" id="heading">
@@ -13,13 +14,14 @@
 
   </div>
   <div class="box">
-    <% for(let i = 0 ; i < newListItem.length; i++){ %>
+    
+    <% newListItem.forEach( item =>  { %>
       <div class="item">
         <input type="checkbox">
          <p><%= newListItem[i] %></p>
       </div>
-  
-    <% } %>
+    <% }) %>
+
 
 
 
@@ -29,5 +31,6 @@
     </form>
 
   </div>
+  <script src="js/index.js"></script>
 </body>
 </html>
